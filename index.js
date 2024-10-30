@@ -23,12 +23,10 @@ const serviceAccount = {
     universe_domain: process.env.UNIVERSE_DOMAIN
 };
 
-console.log('serviceAccount:', serviceAccount)
-
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://personal-finance-82e1f-default-rtdb.firebaseio.com"
+    databaseURL: process.env.DATABASE_URL
 });
 
 const db = admin.database();
